@@ -1,6 +1,6 @@
-import { debugLogger } from "../debug-logger";
+import debugLogger from "../debug-logger";
 
-jest.spyOn(global.console, 'log');
+jest.spyOn(global.console, 'debug').mockImplementation();
 
 describe('Debug Logger', () => {
     afterEach(() => {    
@@ -9,11 +9,11 @@ describe('Debug Logger', () => {
 
     it('should log extra info when debug mode is enabled', () => {
         debugLogger(true, {'test':'test data'});
-        expect(console.log).toHaveBeenCalled();
+        expect(console.debug).toHaveBeenCalled();
     });
 
     it('should do nothing when debug mode is disabled', () => {
         debugLogger(false, {'test':'test data'});
-        expect(console.log).not.toHaveBeenCalled();
+        expect(console.debug).not.toHaveBeenCalled();
     })
 });

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function getRandomProgram(programType: string, service: string, genre: string) {
+export default async function getRandomProgram(programType: string, service: string, genre: string) {
     const genreNumber = getGenreNumber(genre);
     return axios({
         method: 'get',

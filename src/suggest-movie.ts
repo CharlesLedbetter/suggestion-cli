@@ -1,6 +1,6 @@
 import { Command } from "commander";
-import { getRandomProgram } from "./reelgood-client";
-import { debugLogger } from "./debug-logger";
+import getRandomProgram from "./reelgood-client";
+import debugLogger from "./debug-logger";
 
 const program = new Command('movie')
 .name('suggest movie')

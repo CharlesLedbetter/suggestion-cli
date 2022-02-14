@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import axios from 'axios';
-import { debugLogger } from "./debug-logger";
+import debugLogger from "./debug-logger";
 
 const program = new Command('song')
 .name('suggest song')
