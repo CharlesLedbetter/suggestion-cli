@@ -39,5 +39,6 @@ function getGenreNumber(genre: string): number {
 }
 
 function getReelGoodUrl(type: string, service: string, genre: number): string {
-    return `https://api.reelgood.com/v3.0/content/random?availability=onAnySource&content_kind=${type}&genre=${genre}&minimum_imdb=8&minimum_rg=80&nocache=true&region=us&sources=${service}`;
+    return 'https://api.reelgood.com/v3.0/content/random?availability=onAnySource' +
+    `&content_kind=${type}&genre=${genre}&minimum_imdb=8&minimum_rg=80&nocache=true&region=us&sources=${service}`;
 }

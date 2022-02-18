@@ -14,7 +14,10 @@ axios({
     url:     `https://api.discogs.com/releases/${randomNumber}`
 }).then((res: any) => {
     const data = res.data;
-    console.log(`\nArtist: ${data.artists_sort}\n\nAlbum: ${data.title}\n\nSong: ${getRandomTrack(data)}\n\nAlbum URL: ${data.uri}\n`);
+    console.log(
+        `\nArtist: ${data.artists_sort}\n\nAlbum: ${data.title}\n\n` +
+        `Song: ${getRandomTrack(data)}\n\nAlbum URL: ${data.uri}\n`
+        );
     debugLogger(program.opts().debug, data);
 }).catch((err) => {
     console.error("An error has occured");

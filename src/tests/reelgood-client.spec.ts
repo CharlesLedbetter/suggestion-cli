@@ -96,5 +96,6 @@ describe('Reelgood Client', () => {
 });
 
 function getMockUrl(genreNumber: number) {
-    return `https://api.reelgood.com/v3.0/content/random?availability=onAnySource&content_kind=movie&genre=${genreNumber}&minimum_imdb=8&minimum_rg=80&nocache=true&region=us&sources=netflix`;
+    return 'https://api.reelgood.com/v3.0/content/random?availability=onAnySource&content_kind=movie&' +
+    `genre=${genreNumber}&minimum_imdb=8&minimum_rg=80&nocache=true&region=us&sources=netflix`;
 }
