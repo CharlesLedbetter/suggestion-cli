@@ -8,31 +8,56 @@ export default async function getRandomProgram(programType: string, service: str
       });
 }
 
+// the below numbers are specific to reelgood API's genre codes
 function getGenreNumber(genre: string): number {
     let genreNumber: number;
     switch(genre) {
+        case 'drama': genreNumber = 3;
+            break;
         case 'action':
-        case 'adventure': genreNumber = 1;
+        case 'adventure': genreNumber = 5;
             break;
-        case 'animation': genreNumber = 2;
+        case 'animation': genreNumber = 6;
             break;
-        case 'anime': genreNumber = 3;
+        case 'bio':
+        case 'biopic':
+        case 'biography': genreNumber = 7;
             break;
-        case 'biography': genreNumber = 4;
+        case 'comedy': genreNumber = 9;
             break;
-        case 'children': genreNumber = 5;
+        case 'crime': genreNumber = 10;
             break;
-        case 'comedy': genreNumber = 6;
+        case 'doc':
+        case 'documetary': genreNumber = 11;
             break;
-        case 'crime': genreNumber = 7;
+        case 'fantasy': genreNumber = 13;
             break;
-        case 'cult': genreNumber = 8;
+        case 'history': genreNumber = 17;
             break;
-        case 'documetary': genreNumber = 9;
+        case 'horror': genreNumber = 19;
             break;
-        case 'drama': genreNumber = 10;
+        case 'mystery': genreNumber = 23;
             break;
-        default: genreNumber = Math.ceil(Math.random() * 10);
+        case 'scifi':
+        case 'science-fiction': genreNumber = 26;
+            break;
+        case 'sport':
+        case 'sports': genreNumber = 29;
+            break;
+        case 'thriller': genreNumber = 32;
+            break;
+        case 'lgbt':
+        case 'lgbtq':
+        case 'lgbtq+': genreNumber = 37;
+            break;
+        case 'anime': genreNumber = 39;
+            break;
+        case 'cult': genreNumber = 41;
+            break;
+        case 'indie':
+        case 'independent': genreNumber = 43;
+            break;
+        default: genreNumber = new Array(3,5,9,13,26)[Math.floor(Math.random() * 5)];
             break;
     }
     return genreNumber;
