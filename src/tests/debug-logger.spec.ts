@@ -8,12 +8,12 @@ describe('Debug Logger', () => {
     });
 
     it('should log extra info when debug mode is enabled', () => {
-        debugLogger(true, {'test':'test data'});
+        debugLogger(true, 'TEST', {'test':'test data'});
         expect(console.debug).toHaveBeenCalled();
     });
 
     it('should do nothing when debug mode is disabled', () => {
-        debugLogger(false, {'test':'test data'});
+        debugLogger(false, 'TEST', {'test':'test data'});
         expect(console.debug).not.toHaveBeenCalled();
     })
 });

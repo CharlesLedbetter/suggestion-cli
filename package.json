@@ -1,6 +1,6 @@
 {
   "name": "suggestion-cli",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "a cli for testing",
   "main": "suggest.js",
   "scripts": {

@@ -5,18 +5,18 @@ import colors from 'colors/safe'
 
 const program = new Command('show')
 .name('suggest show')
-.requiredOption('-s, --services <service>', 'service')
-.option('-g, --genres <genre>', 'genre')
+.requiredOption('-s, --service <service>', 'service')
+.option('-g, --genre <genre>', 'genre')
 .option('-d, --debug', 'debug')
 .parse(process.argv);
 
-getRandomProgram('show', program.opts().service, program.opts().genre).then((res: any) => {
+getRandomProgram('show', program.opts().service, program.opts().genre, program.opts().debug).then((res: any) => {
     const data = res.data;
     printShowResults(data.title, data.overview, data.runtime);
-    debugLogger(program.opts().debug, data);
+    debugLogger(program.opts().debug, 'Data', data);
 }).catch((err) => {
     console.error("An error has occured");
-    debugLogger(program.opts().debug, err);
+    debugLogger(program.opts().debug, 'Error', err);
 });
 
 function printShowResults(title: string, overview: string, runtime: string): void {

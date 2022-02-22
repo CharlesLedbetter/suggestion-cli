@@ -1,5 +1,7 @@
-export default function debugLogger(debug: boolean, data: any) {
+import colors from 'colors/safe'
+
+export default function debugLogger(debug: boolean, type: string, data: any) {
     if(debug) {
-        console.debug('DEBUG:\n:', data);
+        console.debug(`${colors.yellow(`DEBUG ${type}:`)}\n`, data);
       }
 }

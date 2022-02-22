@@ -1,10 +1,11 @@
 import axios from 'axios';
+import debugLogger from './debug-logger';
 
-export default async function getRandomProgram(programType: string, service: string, genre: string) {
+export default async function getRandomProgram(programType: string, service: string, genre: string, debug: boolean) {
     const genreNumber = getGenreNumber(genre);
     return axios({
         method: 'get',
-        url: getReelGoodUrl(programType, service, genreNumber)
+        url: getReelGoodUrl(programType, service, genreNumber, debug)
       });
 }
 
@@ -63,7 +64,9 @@ function getGenreNumber(genre: string): number {
     return genreNumber;
 }
 
-function getReelGoodUrl(type: string, service: string, genre: number): string {
-    return 'https://api.reelgood.com/v3.0/content/random?availability=onAnySource' +
-    `&content_kind=${type}&genre=${genre}&minimum_imdb=8&minimum_rg=80&nocache=true&region=us&sources=${service}`;
+function getReelGoodUrl(type: string, service: string, genre: number, debug: boolean): string {
+    const url = 'https://api.reelgood.com/v3.0/content/random?' +
+    `content_kind=${type}&genre=${genre}&minimum_imdb=6&minimum_rg=60&nocache=true&region=us&sources=${service}`;
+    debugLogger(debug, 'URL', url);
+    return url;
 }

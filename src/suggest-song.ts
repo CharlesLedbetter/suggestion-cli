@@ -17,10 +17,10 @@ axios({
     const data = res.data;
     const randomTrack = getRandomTrack(data);
     printSongResults(data.artists_sort, data.title, randomTrack, data.uri)
-    debugLogger(program.opts().debug, data);
+    debugLogger(program.opts().debug, 'Data', data);
 }).catch((err) => {
     console.error("An error has occured");
-    debugLogger(program.opts().debug, err);
+    debugLogger(program.opts().debug, 'Error', err);
 });
 
 function getRandomTrack(data: any): string {

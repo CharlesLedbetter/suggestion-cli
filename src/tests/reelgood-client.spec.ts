@@ -5,7 +5,7 @@ jest.mock('axios', () => jest.fn(() => Promise.resolve({data: {test: 'test data'
 
 describe('Reelgood Client', () => {
     it('should successfully get a random action movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'action');
+        const actual = await getRandomProgram('movie', 'netflix', 'action', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -14,7 +14,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random animation movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'animation');
+        const actual = await getRandomProgram('movie', 'netflix', 'animation', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -23,7 +23,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random anime movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'anime');
+        const actual = await getRandomProgram('movie', 'netflix', 'anime', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -32,7 +32,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random biography movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'bio');
+        const actual = await getRandomProgram('movie', 'netflix', 'bio', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -41,7 +41,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random comedy movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'comedy');
+        const actual = await getRandomProgram('movie', 'netflix', 'comedy', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -50,7 +50,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random crime movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'crime');
+        const actual = await getRandomProgram('movie', 'netflix', 'crime', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -59,7 +59,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random cult movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'cult');
+        const actual = await getRandomProgram('movie', 'netflix', 'cult', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -68,7 +68,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random documetary movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'doc');
+        const actual = await getRandomProgram('movie', 'netflix', 'doc', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -77,7 +77,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random drama movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'drama');
+        const actual = await getRandomProgram('movie', 'netflix', 'drama', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -86,7 +86,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random fantasy movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'fantasy');
+        const actual = await getRandomProgram('movie', 'netflix', 'fantasy', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -95,7 +95,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random history movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'history');
+        const actual = await getRandomProgram('movie', 'netflix', 'history', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -104,7 +104,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random history movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'horror');
+        const actual = await getRandomProgram('movie', 'netflix', 'horror', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -113,7 +113,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random mystery movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'mystery');
+        const actual = await getRandomProgram('movie', 'netflix', 'mystery', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -122,7 +122,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random science-fiction movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'scifi');
+        const actual = await getRandomProgram('movie', 'netflix', 'scifi', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -131,7 +131,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random sports movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'sport');
+        const actual = await getRandomProgram('movie', 'netflix', 'sport', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -140,7 +140,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random thriller movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'thriller');
+        const actual = await getRandomProgram('movie', 'netflix', 'thriller', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -149,7 +149,7 @@ describe('Reelgood Client', () => {
     });
 
     it('should successfully get a random lgbtq movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'lgbt');
+        const actual = await getRandomProgram('movie', 'netflix', 'lgbt', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -159,7 +159,7 @@ describe('Reelgood Client', () => {
 
 
     it('should successfully get a random indie movie', async () => {
-        const actual = await getRandomProgram('movie', 'netflix', 'indie');
+        const actual = await getRandomProgram('movie', 'netflix', 'indie', false);
         expect(actual.data.test).toBe('test data');
         expect(axios).toHaveBeenCalledWith({
             method: 'get',
@@ -169,6 +169,6 @@ describe('Reelgood Client', () => {
 });
 
 function getMockUrl(genreNumber: number) {
-    return 'https://api.reelgood.com/v3.0/content/random?availability=onAnySource&content_kind=movie&' +
-    `genre=${genreNumber}&minimum_imdb=8&minimum_rg=80&nocache=true&region=us&sources=netflix`;
+    return 'https://api.reelgood.com/v3.0/content/random?content_kind=movie&' +
+    `genre=${genreNumber}&minimum_imdb=6&minimum_rg=60&nocache=true&region=us&sources=netflix`;
 }
