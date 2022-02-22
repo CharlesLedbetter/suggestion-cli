@@ -58,7 +58,7 @@ function getGenreNumber(genre: string): number {
         case 'indie':
         case 'independent': genreNumber = 43;
             break;
-        default: genreNumber = new Array(3,5,9,13,26)[Math.floor(Math.random() * 5)];
+        default: genreNumber = [3,5,9,13,26][Math.floor(Math.random() * 5)];
             break;
     }
     return genreNumber;

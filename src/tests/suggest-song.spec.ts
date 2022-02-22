@@ -16,7 +16,7 @@ describe('Suggest Song Command', () => {
                     {title: 'Song'}
                 ]
             }
-        }
+        };
 
         jest.isolateModules(() => {
             jest.mock('axios', () => jest.fn(() => Promise.resolve(response)));

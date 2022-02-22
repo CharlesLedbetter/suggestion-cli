@@ -1,7 +1,8 @@
 import { Command } from "commander";
 import getRandomProgram from "./reelgood-client";
 import debugLogger from "./debug-logger";
-import colors from 'colors/safe'
+import colors from 'colors/safe';
+import { AxiosResponse } from "axios";
 
 const program = new Command('show')
 .name('suggest show')
@@ -10,7 +11,7 @@ const program = new Command('show')
 .option('-d, --debug', 'debug')
 .parse(process.argv);
 
-getRandomProgram('show', program.opts().service, program.opts().genre, program.opts().debug).then((res: any) => {
+getRandomProgram('show', program.opts().service, program.opts().genre, program.opts().debug).then((res: AxiosResponse) => {
     const data = res.data;
     printShowResults(data.title, data.overview, data.runtime);
     debugLogger(program.opts().debug, 'Data', data);

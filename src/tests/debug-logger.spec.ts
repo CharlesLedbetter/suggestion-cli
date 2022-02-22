@@ -15,5 +15,5 @@ describe('Debug Logger', () => {
     it('should do nothing when debug mode is disabled', () => {
         debugLogger(false, 'TEST', {'test':'test data'});
         expect(console.debug).not.toHaveBeenCalled();
-    })
+    });
 });

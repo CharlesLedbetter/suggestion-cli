@@ -3,7 +3,7 @@ import colors from 'colors/safe';
 
 program
 .name('suggest')
-.version('1.0.0')
+.version('0.1.0')
 .description('sugestion cli')
 .command('movie', 'suggests a movie')
 .command('show', 'suggests a show')
