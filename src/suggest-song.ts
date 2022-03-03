@@ -6,7 +6,7 @@ import { song } from './interfaces/song.interfae';
 
 const program = new Command('song')
 .name('suggest song')
-.option('-d, --debug', 'debug mode')
+.option('-d, --debug', 'when present debugging mode is enabled')
 .parse(process.argv);
 
 const randomNumber = Math.floor(Math.random() * 10000000) + 1;

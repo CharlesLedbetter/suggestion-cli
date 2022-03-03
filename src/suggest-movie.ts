@@ -6,9 +6,11 @@ import { AxiosResponse } from "axios";
 
 const program = new Command('movie')
 .name('suggest movie')
-.requiredOption('-s, --service <service>', 'service')
-.option('-g, --genre <genre>', 'genre')
-.option('-d, --debug', 'debug')
+.requiredOption('-s, --service <service>', 'streaming service to get suggestion for <netflix, hulu, amazon, hbo>')
+.option('-g, --genre <genre>', 'genre of movie to suggest <drama, action, adventure, animation, biography, comedy, '
+    + 'crime, documetary, fantasy, history, horror, mystery, scifi, sport, thriller, lgbtq, anime, cult, indie, '
+    + 'independent>')
+.option('-d, --debug', 'when present debugging mode is enabled')
 .parse(process.argv);
 
 getRandomProgram('movie', program.opts().service, program.opts().genre, program.opts().debug).then((res: AxiosResponse) => {

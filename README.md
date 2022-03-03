@@ -81,7 +81,7 @@ Reelgood API is printed to the console.
 
 #### Example:
 ```bash
-node dist/suggest.js show -s netflix -g indie
+node dist/suggest.js show -s hulu -g indie
 ```
 
 ### Song
