@@ -1,4 +1,4 @@
-export interface movie {
+export interface reelgoodProgram {
     id: string,
     title: string,
     overview: string,

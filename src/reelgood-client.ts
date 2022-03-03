@@ -1,67 +1,69 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import debugLogger from './debug-logger';
+import { reelgoodProgram } from './interfaces/reelgoodProgram.interface';
 
-export default async function getRandomProgram(programType: string, service: string, genre: string, debug: boolean) {
+export default async function getRandomProgram(programType: string, service: string, genre: string, debug: boolean): Promise<AxiosResponse<reelgoodProgram>> {
+    const serviceCode = getServiceCode(service);
     const genreNumber = getGenreNumber(genre);
     return axios({
         method: 'get',
-        url: getReelGoodUrl(programType, service, genreNumber, debug)
-      });
+        url: getReelGoodUrl(programType, serviceCode, genreNumber, debug)
+      }) as Promise<AxiosResponse<reelgoodProgram>>;
+}
+
+function getServiceCode(service: string): string {
+    switch(service.toLowerCase()) {
+        case 'netflix': return 'netflix';
+        case 'hulu':
+        case 'hulu+':
+        case 'hulu-plus':
+        case 'hulu_plus': return 'hulu_plus';
+        case 'amazon':
+        case 'prime':
+        case 'amazon-prime':  
+        case 'amazon_prime': return 'amazon_prime';
+        case 'hbo':
+        case 'hbo-max':
+        case 'hbo_max': return 'hbo_max';
+        default: throw Error('Error: Invalid service');
+    }
 }
 
 // the below numbers are specific to reelgood API's genre codes
 function getGenreNumber(genre: string): number {
-    let genreNumber: number;
-    switch(genre) {
-        case 'drama': genreNumber = 3;
-            break;
+    if (!genre) {
+        return [3,5,9,13,26][Math.floor(Math.random() * 5)];
+    }
+    switch(genre.toLowerCase()) {
+        case 'drama': return 3;
         case 'action':
-        case 'adventure': genreNumber = 5;
-            break;
-        case 'animation': genreNumber = 6;
-            break;
+        case 'adventure': return 5;
+        case 'animation': return 6;
         case 'bio':
         case 'biopic':
-        case 'biography': genreNumber = 7;
-            break;
-        case 'comedy': genreNumber = 9;
-            break;
-        case 'crime': genreNumber = 10;
-            break;
+        case 'biography': return 7;
+        case 'comedy': return 9;
+        case 'crime': return 10;
         case 'doc':
-        case 'documetary': genreNumber = 11;
-            break;
-        case 'fantasy': genreNumber = 13;
-            break;
-        case 'history': genreNumber = 17;
-            break;
-        case 'horror': genreNumber = 19;
-            break;
-        case 'mystery': genreNumber = 23;
-            break;
+        case 'documetary': return 11;
+        case 'fantasy': return 13;
+        case 'history': return 17;
+        case 'horror': return 19;
+        case 'mystery': return 23;
         case 'scifi':
-        case 'science-fiction': genreNumber = 26;
-            break;
+        case 'science-fiction': return 26;
         case 'sport':
-        case 'sports': genreNumber = 29;
-            break;
-        case 'thriller': genreNumber = 32;
-            break;
+        case 'sports': return 29;
+        case 'thriller': return 32;
         case 'lgbt':
         case 'lgbtq':
-        case 'lgbtq+': genreNumber = 37;
-            break;
-        case 'anime': genreNumber = 39;
-            break;
-        case 'cult': genreNumber = 41;
-            break;
+        case 'lgbtq+': return 37;
+        case 'anime': return 39;
+        case 'cult': return 41;
         case 'indie':
-        case 'independent': genreNumber = 43;
-            break;
-        default: genreNumber = [3,5,9,13,26][Math.floor(Math.random() * 5)];
-            break;
+        case 'independent': return 43;
+        default: throw Error('Error: Invalid genre');
     }
-    return genreNumber;
 }
 
 function getReelGoodUrl(type: string, service: string, genre: number, debug: boolean): string {

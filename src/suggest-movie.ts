@@ -16,7 +16,7 @@ getRandomProgram('movie', program.opts().service, program.opts().genre, program.
     printMovieResults(data.title, data.overview, data.runtime);
     debugLogger(program.opts().debug, 'Data', data);
 }).catch((err) => {
-    console.error("An error has occured");
+    console.error(err.message || "An error has occured");
     debugLogger(program.opts().debug, 'Error', err);
 });
 

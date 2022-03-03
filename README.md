@@ -11,7 +11,7 @@
 
 Suggestion CLI is a tool for finding something enertaining to watch or listen to.
 
-> This project has not been published to the npm registry. It was built
+> This project has not been published to the npm registry. It was created
 primarily for the author as a reference implimentaion of a CLI built using
 [commander](https://www.npmjs.com/package/commander) that uses 
 [axios](https://www.npmjs.com/package/axios) to call APIs.
@@ -40,7 +40,7 @@ The `suggest movie` command has one required option, and two optional options.
 
 #### Required Option: 
 Short form `-s`, long form `--service`, accepted values are
-'netflix','hulu_plus', 'amazon_prime', 'hbo_max'. This option indicates which streaming
+'netflix','hulu', 'amazon', 'hbo'. This option indicates which streaming
 service to get a random movie from.
 
 #### Option:
@@ -65,7 +65,7 @@ The `suggest show` command has one required option, and two optional options.
 
 #### Required Option: 
 Short form `-s`, long form `--service`, accepted values are
-'netflix','hulu_plus', 'amazon_prime', 'hbo_max'. This option indicates which streaming
+'netflix','hulu', 'amazon', 'hbo'. This option indicates which streaming
 service to get a random movie from.
 
 #### Option:
