@@ -12,7 +12,7 @@
 Suggestion CLI is a tool for finding something enertaining to watch or listen to.
 
 > This project has not been published to the npm registry. It was created
-primarily for the author as a reference implimentaion of a CLI built using
+primarily for the author as a reference implementation of a CLI built using
 [commander](https://www.npmjs.com/package/commander) that uses 
 [axios](https://www.npmjs.com/package/axios) to call APIs.
 
